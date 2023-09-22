@@ -10,7 +10,9 @@
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">This is a wider card with supporting .</p>
-
+                                        <div class="btn donar-btnview">
+                        <a href="{{route('donarprofile')}}">View Details</a>
+                    </div>
                         <div class="social-link">
                       <ul class="social-img">
                           {{-- <li><a href="#"><i class="fa-brands fa-facebook-f" style="color: #c4bebe"></i></a></li> --}}
@@ -28,7 +30,9 @@
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">This is a wider card with supporting .</p>
-
+                                        <div class="btn donar-btnview">
+                        <a href="{{route('donarprofile')}}">View Details</a>
+                    </div>
                         <div class="social-link">
                       <ul class="social-img">
                           {{-- <li><a href="#"><i class="fa-brands fa-facebook-f" style="color: #c4bebe"></i></a></li> --}}
@@ -46,7 +50,9 @@
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">This is a wider card with supporting .</p>
-
+                                        <div class="btn donar-btnview">
+                        <a href="{{route('donarprofile')}}">View Details</a>
+                    </div>
                         <div class="social-link">
                       <ul class="social-img">
                           {{-- <li><a href="#"><i class="fa-brands fa-facebook-f" style="color: #c4bebe"></i></a></li> --}}
@@ -64,7 +70,9 @@
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">This is a wider card with supporting .</p>
-
+                                        <div class="btn donar-btnview">
+                        <a href="{{route('donarprofile')}}">View Details</a>
+                    </div>
                         <div class="social-link">
                       <ul class="social-img">
                           {{-- <li><a href="#"><i class="fa-brands fa-facebook-f" style="color: #c4bebe"></i></a></li> --}}
@@ -82,7 +90,9 @@
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">This is a wider card with supporting .</p>
-
+                                        <div class="btn donar-btnview">
+                        <a href="{{route('donarprofile')}}">View Details</a>
+                    </div>
                         <div class="social-link">
                       <ul class="social-img">
                           {{-- <li><a href="#"><i class="fa-brands fa-facebook-f" style="color: #c4bebe"></i></a></li> --}}
@@ -105,7 +115,9 @@
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">This is a wider card with supporting .</p>
-
+                                        <div class="btn donar-btnview">
+                        <a href="{{route('donarprofile')}}">View Details</a>
+                    </div>
                         <div class="social-link">
                       <ul class="social-img">
                           {{-- <li><a href="#"><i class="fa-brands fa-facebook-f" style="color: #c4bebe"></i></a></li> --}}
@@ -123,7 +135,9 @@
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">This is a wider card with supporting .</p>
-
+                                        <div class="btn donar-btnview">
+                        <a href="{{route('donarprofile')}}">View Details</a>
+                    </div>
                         <div class="social-link">
                       <ul class="social-img">
                           {{-- <li><a href="#"><i class="fa-brands fa-facebook-f" style="color: #c4bebe"></i></a></li> --}}
@@ -141,7 +155,9 @@
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">This is a wider card with supporting .</p>
-
+                                        <div class="btn donar-btnview">
+                        <a href="{{route('donarprofile')}}">View Details</a>
+                    </div>
                         <div class="social-link">
                       <ul class="social-img">
                           {{-- <li><a href="#"><i class="fa-brands fa-facebook-f" style="color: #c4bebe"></i></a></li> --}}
@@ -159,7 +175,9 @@
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">This is a wider card with supporting .</p>
-
+                                        <div class="btn donar-btnview">
+                        <a href="{{route('donarprofile')}}">View Details</a>
+                    </div>
                         <div class="social-link">
                       <ul class="social-img">
                           {{-- <li><a href="#"><i class="fa-brands fa-facebook-f" style="color: #c4bebe"></i></a></li> --}}
@@ -177,7 +195,9 @@
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">This is a wider card with supporting .</p>
-
+                                        <div class="btn donar-btnview">
+                        <a href="{{route('donarprofile')}}">View Details</a>
+                    </div>
                         <div class="social-link">
                       <ul class="social-img">
                           {{-- <li><a href="#"><i class="fa-brands fa-facebook-f" style="color: #c4bebe"></i></a></li> --}}

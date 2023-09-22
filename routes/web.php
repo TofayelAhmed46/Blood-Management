@@ -43,6 +43,12 @@ Route::get('/donarprofile', [LoginController::class, 'view'])->name('donarprofil
 
 
 
+
+
+
+
+
+
 Route::get('/backend', function () {
     return view('components.backend.layouts.master');
 })->name('backend.home');

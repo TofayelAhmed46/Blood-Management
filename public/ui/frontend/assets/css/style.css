@@ -1,65 +1,69 @@
-
 * {
-    font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .caroImg {
-    height: 300px;
+  height: 300px;
 
 }
 
-  .carouselImage{
-    width: 100%;
-    height: 300px;
-    border: 2px solid red;
-    background-attachment: fixed;
+.carouselImage {  
+  width: 100%;
+  height: 300px;
+  border: 2px solid red;
+  background-attachment: fixed;
 
-  }
+}
+
 .bgcolor {
-    background-color: #D8203B;
+  background-color: #D8203B;
 }
 
-.card img{
-    height: 150px;
+.card img {
+  height: 150px;
 
 
 }
-.cardMargin{
-    margin-left: 30px;
-    margin-right: 30px;
+
+.cardMargin {
+  margin-left: 30px;
+  margin-right: 8px;
 }
 
-.nav-link{
- color:black;
- margin-right: 20px;
- 
-}
-.nav-link:hover{
- color:white;
- background-color: red;
- 
+.nav-link {
+  color: black;
+  margin-right: 20px;
+
 }
 
-.bloodSection{
-    background-color: azure;
-    padding-top: 1px;
+.nav-link:hover {
+  color: white;
+  background-color: red;
+
 }
 
-.bdgroup{
-    margin-top: 20px;
+.bloodSection {
+  background-color: azure;
+  padding-top: 1px;
 }
-.row .bloodgroup{
-    background-color: #D8203B;
-    margin-right: 10px;
-    margin-bottom: 20px;
-    text-align: center;
-    border-radius: 7%;
-    width: 24%;
-    padding: 40px;
-    FONT-SIZE: 30px;
+
+.bdgroup {
+  margin-top: 20px;
 }
-.row .bloodgroup:last-child{
-    margin-right: 0px;
+
+.row .bloodgroup {
+  background-color: #D8203B;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  border-radius: 7%;
+  width: 24%;
+  padding: 40px;
+  FONT-SIZE: 30px;
+}
+
+.row .bloodgroup:last-child {
+  margin-right: 0px;
 }
 
 /* .bloodgroup:hover{
@@ -68,26 +72,29 @@
   transition-duration: 1s;
 } */
 
-.bloodgroup:hover{
+.bloodgroup:hover {
   background-color: #532654;
   color: white;
   transition-duration: 1s;
 }
-.recentdonar{
-    padding-top: 1px;
-    padding-bottom: 2px;
-    background-color: antiquewhite;
+
+.recentdonar {
+  padding-top: 1px;
+  padding-bottom: 2px;
+  background-color: antiquewhite;
 }
+
 .social-link {
   text-align: center;
-  
+
 }
- .social-link ul li{
+
+.social-link ul li {
   list-style: none;
   text-align: justify;
 }
 
-.social-link ul li{
+.social-link ul li {
   margin-right: 15px;
   display: inline;
   /* background-color: red; */
@@ -106,119 +113,152 @@
   text-decoration: none;
   color: white;
   padding: 7px;
-  background-color: #D8203B;;
+  background-color: #D8203B;
+  ;
 }
-.social-link ul li a:hover{
-  background-color: black;
-  border:1px solid #D8203B;
- }
 
- .social-img ol, ul {
+.social-link ul li a:hover {
+  background-color: black;
+  border: 1px solid #D8203B;
+}
+
+.social-img ol,
+ul {
   padding-left: 0rem;
 }
+.background{
+  background-color: #fffefe;
 
-.formdesign{
+}
+
+.formdesign {
   padding: 50px;
   margin-top: 50px;
   margin-bottom: 50px;
-  background-color: #d8c7e11c;
-  box-shadow: 5px 5px 5px 5px #8f7f7f;
+  background-color: #fff;
+  box-shadow: 0px 5px 10px 0px rgb(0, 0, 0, 0.2);
 }
-.formdesign .col{
+
+.formdesign .col {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-.formdesign .col label{
+.formdesign .col label {
   text-align: center;
   left: 30px;
 }
-.fmain li{
-    list-style-type: none;
-    position: relative;
-    padding-left: 15px;
-   
-    /* font:black; */
-  }
-  
- .fmain li:before {
-    content: "\25BA \0020";
-    font-size: 10px;
-    position: absolute;
-    top: 5px;
-    left: -10px;
-  }
 
-  .fmain li a{
-    color: rgb(193, 197, 188);
-    text-decoration: none;
-    text-wrap: 3px;
-  }
+.fmain li {
+  list-style-type: none;
+  position: relative;
+  padding-left: 15px;
 
-  .fmain li a:hover{
-    color: #D8203B;
-  }
+  /* font:black; */
+}
 
-  .footer-area{
-    margin-top: 2px;
-    padding-top: 10px;
-    text-decoration: none;
-    color: rgb(193, 197, 188);
+.fmain li:before {
+  content: "\25BA \0020";
+  font-size: 10px;
+  position: absolute;
+  top: 5px;
+  left: -10px;
+}
 
-  }
+.fmain li a {
+  color: rgb(193, 197, 188);
+  text-decoration: none;
+  text-wrap: 3px;
+}
 
-  .footer-area:first-child{
-    text-align: center;
-  }
+.fmain li a:hover {
+  color: #D8203B;
+}
 
-  .address ul li, .footer-social-link ul li{
-    list-style: none;
-    text-align: justify;
-  }
-  .address ul li:hover{
-    color: #D8203B;
-  }
-  .footer-social-link ul li{
-    margin-right: 15px;
-    display: inline;
-    /* background-color: red; */
-    font-size: 20px;
-  }
+.footer-area {
+  margin-top: 2px;
+  padding-top: 10px;
+  text-decoration: none;
+  color: rgb(193, 197, 188);
 
-  /* .footer-social-link ul li:hover{
+}
+
+.footer-area:first-child {
+  text-align: center;
+}
+
+.address ul li,
+.footer-social-link ul li {
+  list-style: none;
+  text-align: justify;
+}
+
+.address ul li:hover {
+  color: #D8203B;
+}
+
+.footer-social-link ul li {
+  margin-right: 15px;
+  display: inline;
+  /* background-color: red; */
+  font-size: 20px;
+}
+
+/* .footer-social-link ul li:hover{
    color: white;
    background-color: #000;
   } */
 
-  .footer-social-link ul li a {
-    font-size: 15px;
-    border: 1px solid #fff;
-    text-align: center;
-    text-decoration: none;
-    color: white;
-    padding: 7px;
-    background-color: #D8203B;;
-  }
-  .footer-social-link ul li a:hover{
-    background-color: black;
-    border:1px solid #D8203B;
-   }
+.footer-social-link ul li a {
+  font-size: 15px;
+  border: 1px solid #fff;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  padding: 7px;
+  background-color: #D8203B;
+  ;
+}
 
-   /* .cardgroup{
+.footer-social-link ul li a:hover {
+  background-color: black;
+  border: 1px solid #D8203B;
+}
+
+/* .cardgroup{
     padding: 4px;
     margin-bottom: 20px;
    }  */
 
-   .cardgroup {
-    padding: 66px;
-    margin-bottom: 0px;
-    padding-top: 2px;
-   }
+.cardgroup {
+  padding: 66px;
+  margin-bottom: 0px;
+  padding-top: 2px;
+}
 
-   .cardMargin{
-    box-shadow: 15px 15px 30px #6d6a6a;
-   }
+.cardMargin {
+  box-shadow: 15px 15px 30px #6d6a6a;
+}
 
-   .footer-area{
-    margin-top: 10px;
-   }
+.footer-area {
+  margin-top: 10px;
+}
+
+.donar-btnview{
+  background: #ddd;
+  text-decoration: none;
+  align-items: center;
+  color: black;
+  margin-bottom: 2px;
+}
+
+.donar-btnview a{
+  color:black;
+  font-size: 17px;
+  text-decoration: none;
+}
+
+.donar-btnview:hover{
+  background-color: #999;
+  font: white;
+}
