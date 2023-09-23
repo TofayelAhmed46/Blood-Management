@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\DonarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,17 +18,21 @@ use App\Http\Controllers\RoleController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+// Route::get('admin/dashboard', function () {
+//     return view('admindashboard');
+// })->middleware(['auth', 'verified'])->name('admin.dashboard');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::patch('/profile', [ProfileController::class, 'App\Http\Middleware;'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
@@ -43,7 +49,8 @@ Route::get('/donarprofile', [LoginController::class, 'view'])->name('donarprofil
 
 
 
-
+Route::get('/donardata',[DonarController::class,'index']);
+Route::get('/donar/profile/{id}',[DonarController::class,'show'])->name('donar.profile');
 
 
 
@@ -54,3 +61,11 @@ Route::get('/backend', function () {
 })->name('backend.home');
 
 require __DIR__.'/auth.php';
+
+
+// Route::get('/',[ProductController::class,'index'])->name('products.index');
+// Route::get('/product/create',[ProductController::class,'create'])->name('products.create');
+// Route::post('/product/store',[ProductController::class,'store'])->name('products.store');
+// Route::get('/product/{id}/edit',[ProductController::class,'edit'])->name('products.edit');
+// Route::put('/product/{id}/update',[ProductController::class,'update'])->name('products.update');
+// Route::delete('/product/{id}/delete',[ProductController::class,'destroy']);

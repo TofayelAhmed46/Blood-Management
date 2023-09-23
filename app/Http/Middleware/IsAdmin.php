@@ -20,7 +20,7 @@ class IsAdmin
             return $next($request);
         } 
         else{
-            return redirect('home')->with('error','You dont have admin access');
+            return redirect('welcome')->with('error','You dont have admin access');
         }
 
     }

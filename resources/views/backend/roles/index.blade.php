@@ -1,30 +1,38 @@
 <x-backend.layouts.master>
-    <table class="table table-bordered table-hovered" border="1">
+    <h3 style="text-align: center; color:blue">Donar Data</h3>
+    <table class="table table-bordered table-hovered text-center" border="1">
+        <button class="btn btn-dark float-right mb-3"><a href="">Add New Role</a></button>
+        {{-- <button class="btn btn-dark"><a href="{{ route('roles.create')}}">Add New Role</a></button> --}}
         <thead>
+            
+           
             <tr>
-                <th><h3>Role</h3></th>
-            </tr>
-            <tr>
-                <th colspan="3" style="text-align: right">
-                    <button class="btn btn-dark"><a href="{{ route('roles.create')}}">Add New Role</a></button>
-                </th>
-            </tr>
-            <tr>
-                <th class="col-4">Ser No</th>
-                <th class="col-4" >Role Name</th>
-                <th class="col-4" >Action</th>
+                <th class="col-1">Ser No</th>
+                <th class="col-3" >Name</th>
+                <th class="col-3" >Phone</th>
+                <th class="col-5" >Action</th>
             </tr>
         </thead>
         <tbody>
             @php
                 $sl=1
             @endphp
-            @foreach ($role_value as $role)
+            @foreach ($data as $datas)
             <tr>
-                <td>{{$sl++}}</td>
-                <td>{{$role->Roles}}</td>
+                <td>{{$datas->id }}</td>
+                <td>{{$datas->name}}</td>
+                <td>{{$datas->donar->phone}}</td>
                 <td>
-                    <a class="btn btn-sm btn-success" href="">Show</a>
+{{-- 
+                    @foreach ($data as $datas) 
+                    {{__("User ID: " . $datas->id . "<br>")}}
+                     {{"User name: " . $datas->name . "<br>"}}
+                     {{"User name: " . $datas->donar->phone . "<br>"}} --}}
+                     {{-- @endforeach --}}
+
+
+
+                    <a class="btn btn-sm btn-success" href="/donar/profile/{{$datas->id }}">Show</a>
                     <a class="btn btn-sm btn-success" href="">Edit</a>
                     <a class="btn btn-sm btn-danger" href="">Delete</a>
                     {{-- <a href="{{ route('roles.show', $role->id)}}">Show</a>

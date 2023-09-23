@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Donar;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class DonarController extends Controller
 {
@@ -12,7 +13,11 @@ class DonarController extends Controller
      */
     public function index()
     {
-        //
+        $datas = User::with('donar')->get();
+        return view('backend.roles.index',['data'=>$datas]);
+
+      
+
     }
 
     /**
@@ -20,10 +25,24 @@ class DonarController extends Controller
      */
     public function create()
     {
-        //
+        return view('components.backend.layouts.datainsert');
+
+
     }
 
+    // use App\Models\Customer;
+
+    // // To retrieve all orders with their corresponding customers
+    // $orders = Order::with('customer')->get();
+
+    // // To retrieve a specific order with its corresponding customer
+    // $order = Order::with('customer')->find($orderId);
+
+    // // To access the customer data of an order
+    // $customerName = $order->customer->name;
     /**
+     * 
+     * use App\Models\Order;
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
@@ -34,9 +53,14 @@ class DonarController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Donar $donar)
+    public function show($id)
     {
-        //
+        // User::with('donar')->get();
+        $datas = User::where('id',$id)->with('donar')->get();
+
+        //  dd($datas);
+        // echo ("Hi tofayel How are you");
+        return view('backend.roles.show',['data'=>$datas]);
     }
 
     /**

@@ -27,6 +27,3 @@
 </body>
 
 </html>
-
-
-<h1>This is from bacend partial</h1>
