@@ -58,7 +58,7 @@ class DonarController extends Controller
         // User::with('donar')->get();
         $datas = User::where('id',$id)->with('donar')->get();
 
-        //  dd($datas);
+        //   dd($datas['name');
         // echo ("Hi tofayel How are you");
         return view('backend.roles.show',['data'=>$datas]);
     }

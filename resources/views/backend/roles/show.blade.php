@@ -1,5 +1,3 @@
-
-
 <x-backend.layouts.master>
     <div class="container">
 
@@ -7,12 +5,19 @@
         {{-- <button><a href="{{ route('roles.index') }}">Back</a></button> --}}
         <div class="row">
             <div class="col-4">
+
                 <img src="{{ asset('ui/frontend') }}/assets/image/donar/donar1.jpg" alt="" width="200px"
                     height="200px">
-                {{-- <p> {{$data->name}} </p> --}}
+                <br>
+                @foreach ($data as $datas)
+                    {{ $datas->name }} <br>
+                    Profession:
+                    {{ $datas->donar->profession }}
+                    <br>
+                @endforeach
                 {{-- <p> {{$data->profession}} </p> --}}
-                {{$data->donar->phone}}<p>Designation: Mail Process Operator<br>
-                    Organization: The Fox and Hound
+                {{-- {{$datas->name}}<p>Designation: Mail Process Operator<br> --}}
+                Organization: The Fox and Hound
                 </p>
             </div>
             <div class="col-8">
@@ -27,18 +32,19 @@
                         <tr>
 
                             <td>Email:</td>
-                            <td>james@shop.com</td>
+                            <td>{{ $datas->email }} </td>
                         </tr>
                         <tr>
 
                             <td>Phone: </td>
-                            <td>717-502-8961</td>
+                            <td>{{ $datas->donar->phone }} </td>
 
                         </tr>
                         <tr>
 
                             <td>Address:</td>
-                            <td>1910 Saint James Drive, PA 17019
+                            <td>{{ $datas->donar->thana }},
+                                {{ $datas->donar->district }}
                             </td>
                         </tr>
                         <tr>
@@ -48,22 +54,12 @@
                             </td>
                         </tr>
 
-                        <tr>
-                            <td>State: </td>
-                            <td>PA</td>
-                        </tr>
-                        <tr>
-                            <td>City: </td>
-                            <td>Dillsburg
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Zip Code: </td>
-                            <td>17019
-                            </td>
-                        </tr>
+
                         <th>
                         <th><b>Description</b> <br>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam amet maxime similique esse
+                             repellendus a perferendis, minima, architecto excepturi obcaecati dolores aliquid
+                            inventore unde corporis fugit corrupti animi, quo tempora.
 
                             Ex vix alienum sadipscing, quod melius philosophia id has. Ad qui quem reprimique, quo
                             possit detracto reprimique no, sint reque officiis ei per. Ea regione commune volutpat pro,
