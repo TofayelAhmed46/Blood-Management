@@ -33,7 +33,7 @@
 
 
                     <a class="btn btn-sm btn-success" href="/donar/profile/{{$datas->id }}">Show</a>
-                    <a class="btn btn-sm btn-success" href="">Edit</a>
+                    <a class="btn btn-sm btn-success" href="/donar/edit/{{$datas->id }}">Edit</a>
                     <a class="btn btn-sm btn-danger" href="">Delete</a>
                     {{-- <a href="{{ route('roles.show', $role->id)}}">Show</a>
                     <a href="{{ route('roles.edit', $role->id)}}">Edit</a> --}}

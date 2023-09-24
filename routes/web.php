@@ -48,9 +48,10 @@ Route::get('/donar', [LoginController::class, 'donar'])->name('donarview');
 Route::get('/donarprofile', [LoginController::class, 'view'])->name('donarprofile');
 
 
-
+// Data of the donar CRUD Here
 Route::get('/donardata',[DonarController::class,'index']);
 Route::get('/donar/profile/{id}',[DonarController::class,'show'])->name('donar.profile');
+Route::get('/donar/edit/{id}',[DonarController::class,'edit'])->name('donar.edit');
 
 
 

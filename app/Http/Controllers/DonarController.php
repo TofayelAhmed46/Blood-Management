@@ -66,9 +66,14 @@ class DonarController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Donar $donar)
+    public function edit($id)
     {
-        //
+        // dd($id);
+        $datas = User::where('id',$id)->with('donar')->get();
+
+        //   dd($datas['name');
+        //  echo ("Hi tofayel How are you");
+        return view('backend.roles.edit',['data'=>$datas]);
     }
 
     /**
