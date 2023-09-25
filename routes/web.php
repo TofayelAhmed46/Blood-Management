@@ -26,16 +26,24 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-// Route::get('admin/dashboard', function () {
-//     return view('admindashboard');
-// })->middleware(['auth', 'verified'])->name('admin.dashboard');
+Route::get('admin/dashboard', function () {
+    return view('admindashboard');
+})->middleware(['auth', 'verified'])->name('admin.dashboard');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'App\Http\Middleware;'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
 });
 
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/donardata', [DonarController::class, 'index']);
+    Route::get('/donar/profile/{id}', [DonarController::class, 'show'])->name('donar.profile');
+    Route::get('/donar/edit/{id}', [DonarController::class, 'edit'])->name('donar.edit');
+    Route::patch('donar/update/{id}', [DonarController::class, 'update'])->name('donar.update');
+});
 
 Route::get('/', function () {
     return view('welcome');
@@ -49,9 +57,6 @@ Route::get('/donarprofile', [LoginController::class, 'view'])->name('donarprofil
 
 
 // Data of the donar CRUD Here
-Route::get('/donardata',[DonarController::class,'index']);
-Route::get('/donar/profile/{id}',[DonarController::class,'show'])->name('donar.profile');
-Route::get('/donar/edit/{id}',[DonarController::class,'edit'])->name('donar.edit');
 
 
 
@@ -61,7 +66,7 @@ Route::get('/backend', function () {
     return view('components.backend.layouts.master');
 })->name('backend.home');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
 
 // Route::get('/',[ProductController::class,'index'])->name('products.index');

@@ -79,9 +79,36 @@ class DonarController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Donar $donar)
+    public function update(Request $request,$id)
     {
-        //
+        $user = User::where('id', $id)->with('donar')->first();
+        // dd($donar->donar->phone);
+
+        if (isset($request->image)) {
+
+            $imageName = time() . '.' . $request->image->extension();
+            $request->image->move(public_path('ui/frontend/assets/image'), $imageName);
+            $user->donar->image = $imageName;
+            
+        }
+
+
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->donar->phone = $request->phone;
+        $user->donar->district = $request->district;
+        $user->donar->thana = $request->thana;
+        $user->donar->religion = $request->religion;
+        $user->donar->gender = $request->gender;
+        $user->donar->profession = $request->profession;
+        $user->donar->dob = $request->dob;
+        $user->donar->image = $request->image;
+
+        $user->save();
+        $user->donar->save();
+        return back()->withSuccess("Profile Updated succefully !!!");
+    //    dd($request->all());
     }
 
     /**
