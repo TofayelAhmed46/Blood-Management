@@ -85,7 +85,7 @@
                     </div>
                     <div class="form-group row">
                         <label class="col-2 bold" for="dob"> Date of Birth</label>
-                        <input type="date" name="date" class="form-control col-9"
+                        <input type="date" name="dob" class="form-control col-9"
                             value="{{ old('dob', $datas->donar->dob) }}">
                     </div>
                     <div class="form-group row">

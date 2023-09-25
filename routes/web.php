@@ -4,7 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\RoleController;
+use App\Http\Controllers\BloodSearchController;
 use App\Http\Controllers\DonarController;
 
 /*
@@ -38,6 +38,7 @@ Route::middleware('auth')->group(function () {
 
 });
 
+// Data of the donar CRUD Here
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/donardata', [DonarController::class, 'index']);
     Route::get('/donar/profile/{id}', [DonarController::class, 'show'])->name('donar.profile');
@@ -56,8 +57,10 @@ Route::get('/donar', [LoginController::class, 'donar'])->name('donarview');
 Route::get('/donarprofile', [LoginController::class, 'view'])->name('donarprofile');
 
 
-// Data of the donar CRUD Here
+// search for blood here
 
+Route::get('/bloodsearch',[BloodSearchController::class,'index']);
+Route::post('/bloodsearch',[BloodSearchController::class,'search']);
 
 
 

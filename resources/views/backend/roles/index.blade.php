@@ -21,7 +21,7 @@
             <tr>
                 <td>{{$datas->id }}</td>
                 <td>{{$datas->name}}</td>
-                <td>{{$datas->donar->phone}}</td>
+                <td>{{$datas->donar==null ? '':$datas->donar->phone}}</td>
                 <td>
 {{-- 
                     @foreach ($data as $datas) 

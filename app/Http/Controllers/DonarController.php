@@ -82,18 +82,19 @@ class DonarController extends Controller
     public function update(Request $request,$id)
     {
         $user = User::where('id', $id)->with('donar')->first();
-        // dd($donar->donar->phone);
+        // dd($donar->donar->phone);r
+
+        // dd($request->all());
 
         if (isset($request->image)) {
 
             $imageName = time() . '.' . $request->image->extension();
             $request->image->move(public_path('ui/frontend/assets/image'), $imageName);
             $user->donar->image = $imageName;
-            
         }
 
 
-
+       // dd($request->dob);
         $user->name = $request->name;
         $user->email = $request->email;
         $user->donar->phone = $request->phone;
@@ -103,7 +104,7 @@ class DonarController extends Controller
         $user->donar->gender = $request->gender;
         $user->donar->profession = $request->profession;
         $user->donar->dob = $request->dob;
-        $user->donar->image = $request->image;
+        // $user->donar->image = $request->image;
 
         $user->save();
         $user->donar->save();
