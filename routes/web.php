@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BloodSearchController;
 use App\Http\Controllers\DonarController;
+use App\Http\Controllers\HomeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -22,13 +24,11 @@ use App\Http\Controllers\DonarController;
 //     return view('welcome');
 // });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard',[HomeController::class,'home'])->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('admin/dashboard', function () {
-    return view('admindashboard');
-})->middleware(['auth', 'verified'])->name('admin.dashboard');
+// Route::get('admin/dashboard', function () {
+//     return view('admindashboard');
+// })->middleware(['auth', 'verified'])->name('admin.dashboard');
 
 
 Route::middleware('auth')->group(function () {
