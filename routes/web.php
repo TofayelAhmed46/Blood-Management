@@ -9,27 +9,21 @@ use App\Http\Controllers\DonarController;
 use App\Http\Controllers\HomeController;
 
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+
 
 // Route::get('/', function () {
 //     return view('welcome');
 // });
 
-Route::get('/dashboard',[HomeController::class,'home'])->middleware(['auth', 'verified'])->name('dashboard');
-
 // Route::get('admin/dashboard', function () {
-//     return view('admindashboard');
-// })->middleware(['auth', 'verified'])->name('admin.dashboard');
+    //     return view('admindashboard');
+    // })->middleware(['auth', 'verified'])->name('admin.dashboard');
+    
+    Route::get('/', function () {
+        return view('welcome');
+    })->name('home');
 
+    Route::get('/dashboard',[HomeController::class,'home'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -39,16 +33,13 @@ Route::middleware('auth')->group(function () {
 });
 
 // Data of the donar CRUD Here
-Route::middleware(['auth', 'verified'])->group(function () {
+Route::middleware(['auth', 'verified','Admin'])->group(function () {
     Route::get('/donardata', [DonarController::class, 'index']);
     Route::get('/donar/profile/{id}', [DonarController::class, 'show'])->name('donar.profile');
     Route::get('/donar/edit/{id}', [DonarController::class, 'edit'])->name('donar.edit');
     Route::patch('donar/update/{id}', [DonarController::class, 'update'])->name('donar.update');
 });
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
 
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
@@ -65,9 +56,9 @@ Route::post('/bloodsearch',[BloodSearchController::class,'search']);
 
 
 
-Route::get('/backend', function () {
-    return view('components.backend.layouts.master');
-})->name('backend.home');
+// Route::get('/backend', function () {
+//     return view('components.backend.layouts.master');
+// })->middleware(['auth', 'verified','Admin'])->name('backend.home');
 
 require __DIR__ . '/auth.php';
 

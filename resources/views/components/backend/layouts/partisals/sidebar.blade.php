@@ -23,13 +23,13 @@
             <div class="card-body">
                 <div class="media">
                     <div class="mr-3">
-                        <a href="#"><img src="{{asset('ui/backend')}}/global_assets/images/placeholders/placeholder.jpg" width="38" height="38" class="rounded-circle" alt=""></a>
+                        <a href="#"><img src="{{asset('ui/frontend/assets/image')}}/{{Auth::user()->donar->image}}" width="38" height="38" class="rounded-circle" alt=""></a>
                     </div>
-
+                        {{-- {{$product->image}} --}}
                     <div class="media-body">
-                        <div class="media-title font-weight-semibold">Victoria Baker</div>
+                        <div class="media-title font-weight-semibold">{{ Auth::user()->name }}</div>
                         <div class="font-size-xs opacity-50">
-                            <i class="icon-pin font-size-sm"></i> &nbsp;Santa Ana, CA
+                            <i class="icon-pin font-size-sm"></i> &nbsp;{{Auth::user()->donar->profession}}
                         </div>
                     </div>
 
@@ -52,7 +52,7 @@
                 </li>
                 <li class="nav-item">
                     {{-- <a href="{{route('dashboard')}}" class="nav-link active"> --}}
-                    <a href="" class="nav-link active">
+                    <a href="" class="nav-link active ">
                         <i class="icon-home4"></i>
                         <span>
                             Dashboard
@@ -60,24 +60,34 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    {{-- <a href="{{route('students.index')}}" class="nav-link"> --}}
+                    {{-- <a href="{{route('batches.index')}}" class="nav-link"> --}}
                     <a href="" class="nav-link">
-                        <i class="icon-home4"></i>
+                        <i class="fas fa-eye"></i>
                         <span>
-                            Students
+                            View Donar
                         </span>
                     </a>
+                </li>
+                <li class="nav-item">
+                    {{-- <a href="{{route('students.index')}}" class="nav-link"> --}}
+                    <a href="" class="nav-link">
+                        <i class=" "></i>
+                        <span>
+                           Add Donars
+                        </span>
+                    </a>
+                </li>
                 </li>
                 <li class="nav-item">
                     {{-- <a href="{{route('batches.index')}}" class="nav-link"> --}}
                     <a href="" class="nav-link">
                         <i class="icon-home4"></i>
                         <span>
-                            Batches
+                            Update Profile Info
                         </span>
                     </a>
                 </li>
-                <!-- /main -->
+                    <!-- /main -->
 
                 <!-- Page kits -->
                 <li class="nav-item nav-item-submenu">

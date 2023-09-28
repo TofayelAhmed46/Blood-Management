@@ -1,8 +1,8 @@
 
 <div class="navbar navbar-expand-md navbar-dark">
     <div class="navbar-brand">
-        <a href="index.html" class="d-inline-block">
-            <img src="{{asset('ui/backend')}}/global_assets/images/logo_light.png" alt="">
+        <a href="{{Route('home')}}" class="d-inline-block">
+           <img src="{{ asset('ui/frontend') }}/assets/image/logo.png" class="bg-primary" style="height: 40px; width=40px">
         </a>
     </div>
 
@@ -294,7 +294,8 @@
 
             <li class="nav-item dropdown dropdown-user">
                 <a href="#" class="navbar-nav-link d-flex align-items-center dropdown-toggle" data-toggle="dropdown">
-                    <img src="{{asset('ui/backend')}}/global_assets/images/placeholders/placeholder.jpg" class="rounded-circle mr-2" height="34" alt="">
+                    
+                    <img src="{{asset('ui/frontend/assets/image')}}/{{Auth::user()->donar->image}}" class="rounded-circle mr-2" height="34" alt="">
                     <span>{{ Auth::user()->name }}</span>
                 </a>
 
@@ -306,18 +307,18 @@
                     <a href="#" class="dropdown-item"><i class="icon-comment-discussion"></i> Messages <span class="badge badge-pill bg-blue ml-auto">58</span></a>
                     <div class="dropdown-divider"></div>
                     <a href="#" class="dropdown-item"><i class="icon-cog5"></i> Account settings</a>
-                    <a href="#" class="dropdown-item"><i class="icon-switch2"></i>
+                    {{-- <a href="#" class="dropdown-item"><i class="icon-switch2"></i> --}}
                     
-                                <form method="POST" action="{{ route('logout') }}" class="d-block">
+                                <form method="POST" action="{{ route('logout') }}" class="d-block dropdown-item">
                                 @csrf
     
                                 <x-dropdown-link :href="route('logout')"
                                         onclick="event.preventDefault();
                                                     this.closest('form').submit();">
-                                  <p class="text-dark mt-0">  {{ __('Log Out') }} </p>
+                                  <p class="text-dark mx-0 dropdown-item">  {{ __('Log Out') }} </p>
                                 </x-dropdown-link>
                             </form>
-                    </a>
+                    {{-- </a> --}}
                 </div>
             </li>
 

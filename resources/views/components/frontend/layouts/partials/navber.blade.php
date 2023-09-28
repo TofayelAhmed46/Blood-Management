@@ -10,21 +10,34 @@
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item black">
-                        <a class="nav-link" aria-current="page" href="{{route('home')}}">Home</a>
+                        <a class="nav-link" aria-current="page" href="{{ route('home') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('donarview')}}">Donar</a>
+                        <a class="nav-link" href="{{ route('donarview') }}">Donar</a>
                     </li>
-                    
+
+                    @if (Route::has('login'))
+                        @auth
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">Dashboard</a>
+                            </li>
+                       
+                    @else
+                
+                        
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('login')}}">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('register')}}">Register</a>
+                        <a class="nav-link" href="{{ route('login') }}">Login</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('signup')}}">Sign Up</a>
+                        <a class="nav-link" href="{{ route('register') }}">Register</a>
+                    </li>
+                    @endauth
+                    {{-- @endauth --}}
+                    @endif
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('signup') }}">Sign Up</a>
                     </li>
                 </ul>
             </div>
