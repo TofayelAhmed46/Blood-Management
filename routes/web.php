@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\LoginController;
@@ -34,7 +35,7 @@ Route::middleware('auth')->group(function () {
 
 // Data of the donar CRUD Here
 Route::middleware(['auth', 'verified','Admin'])->group(function () {
-    Route::get('/donardata', [DonarController::class, 'index']);
+    Route::get('/donardata', [DonarController::class, 'index'])->name('donardata');
     Route::get('/donar/profile/{id}', [DonarController::class, 'show'])->name('donar.profile');
     Route::get('/donar/edit/{id}', [DonarController::class, 'edit'])->name('donar.edit');
     Route::patch('donar/update/{id}', [DonarController::class, 'update'])->name('donar.update');
@@ -45,7 +46,7 @@ Route::middleware(['auth', 'verified','Admin'])->group(function () {
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::get('/signup', [LoginController::class, 'signup'])->name('signup');
 Route::get('/donar', [LoginController::class, 'donar'])->name('donarview');
-Route::get('/donarprofile', [LoginController::class, 'view'])->name('donarprofile');
+Route::get('/donarprofile', [LoginController::class, 'view'])->Middleware('auth')->name('donarprofile');
 
 
 // search for blood here

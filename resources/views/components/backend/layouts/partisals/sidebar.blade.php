@@ -61,7 +61,7 @@
                 </li>
                 <li class="nav-item">
                     {{-- <a href="{{route('batches.index')}}" class="nav-link"> --}}
-                    <a href="" class="nav-link">
+                    <a href="{{route('donardata')}}" class="nav-link">
                         <i class="fas fa-eye"></i>
                         <span>
                             View Donar

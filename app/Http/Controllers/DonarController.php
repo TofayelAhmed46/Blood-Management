@@ -108,7 +108,9 @@ class DonarController extends Controller
 
         $user->save();
         $user->donar->save();
-        return back()->withSuccess("Profile Updated succefully !!!");
+        $datas = User::with('donar')->get();
+        return view('backend.roles.index',['data'=>$datas]);
+
     //    dd($request->all());
     }
 

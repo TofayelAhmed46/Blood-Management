@@ -13,7 +13,14 @@ class HomeController extends Controller
         if (Auth::id()) {
             $isadmin = Auth()->user()->is_admin;
             if ($isadmin == 1) {
-                return view('admindashboard');
+                $user= User::get();
+                $total_donar =count($user);
+                
+                // dd($total_donar);
+
+                return view('admindashboard',['donar'=> $total_donar]);
+
+
             } else if ($isadmin == 0) {
                 return view('dashboard');
             } else {

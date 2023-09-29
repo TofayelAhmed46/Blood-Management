@@ -10,7 +10,8 @@
                 <th class="col-1">Ser No</th>
                 <th class="col-3" >Name</th>
                 <th class="col-3" >Phone</th>
-                <th class="col-5" >Action</th>
+                {{-- <th class="col-2" >Image</th> --}}
+                <th class="col-3" >Action</th>
             </tr>
         </thead>
         <tbody>
@@ -22,6 +23,11 @@
                 <td>{{$datas->id }}</td>
                 <td>{{$datas->name}}</td>
                 <td>{{$datas->donar==null ? '':$datas->donar->phone}}</td>
+                {{-- <td>
+                   @dd($datas->donar->image)
+                    <img src="{{asset('ui/frontend/assets/image')}}/{{$datas->donar->image}}" alt="">
+                    
+                </td> --}}
                 <td>
 {{-- 
                     @foreach ($data as $datas) 

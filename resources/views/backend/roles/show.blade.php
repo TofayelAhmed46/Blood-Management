@@ -12,7 +12,7 @@
                 @foreach ($data as $datas)
                     {{ $datas->name }} <br>
                     Profession:
-                    {{ $datas->donar->profession }}
+                    {{ $datas->donar==null ? '':$datas->donar->profession}}
                     <br>
                 @endforeach
                 {{-- <p> {{$data->profession}} </p> --}}
