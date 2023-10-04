@@ -40,25 +40,25 @@
                     <div class="form-group row">
                         <label class="col-2"for="phone"> Phone</label>
                         <input type="text" name="phone" class="form-control col-9"
-                            value="{{ old('phone', $datas->donar->phone) }}">
+                            value="{{ old('phone', $datas->donar==null ? '':$datas->donar->phone) }}">
                     </div>
 
                     <div class="form-group row">
                         <label class="col-2 bold" for="district" class="float-left"> District</label>
                         <input type="text" name="district" class="form-control col-9"
-                            value="{{ old('district', $datas->donar->district) }}">
+                            value="{{ old('district', $datas->donar==null ? '': $datas->donar->district) }}">
                     </div>
 
                     <div class="form-group row">
                         <label class="col-2 bold" for="thana"> Thana</label>
                         <input type="text" name="thana" class="form-control col-9"
-                            value="{{ old('thana', $datas->donar->thana) }}">
+                            value="{{ old('thana',$datas->donar==null ? '': $datas->donar->thana) }}">
                     </div>
 
                     <div class="form-group row">
                         <label class="col-2 bold" for="religion"> Religion</label>
                         <input type="text" name="religion" class="form-control col-9"
-                            value="{{ old('religion', $datas->donar->religion) }}">
+                            value="{{ old('religion',$datas->donar==null ? '': $datas->donar->religion) }}">
                     </div>
 
                     <div class="form-group row  d-flex">
@@ -81,17 +81,17 @@
                     <div class="form-group row">
                         <label class="col-2 bold" for="profession"> Profession</label>
                         <input type="textarea" name="profession" class="form-control col-9"
-                            value="{{ old('profession', $datas->donar->profession) }}">
+                            value="{{ old('profession',$datas->donar==null ? '': $datas->donar->profession) }}">
                     </div>
                     <div class="form-group row">
                         <label class="col-2 bold" for="dob"> Date of Birth</label>
                         <input type="date" name="dob" class="form-control col-9"
-                            value="{{ old('dob', $datas->donar->dob) }}">
+                            value="{{ old('dob',$datas->donar==null ? '': $datas->donar->dob) }}">
                     </div>
                     <div class="form-group row">
                         <label class="col-2 bold" for="image"> Image</label>
                         <input type="file" name="image" class=""
-                            value="{{ old('image', $datas->donar->image) }}">
+                            value="{{ old('image',$datas->donar==null ? '': $datas->donar->image) }}">
                     </div>
 
                     {{-- <div class="form-group row">

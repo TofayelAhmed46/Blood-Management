@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('blood_groups', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('donar_id');
             $table->string('blood-group');
-            $table->integer('BP');
+            $table->integer('BP')->nullable();
+            $table->float('hemoglobin')->nullable();
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('donar_id')->references('id')->on('donars');
         });
     }
 

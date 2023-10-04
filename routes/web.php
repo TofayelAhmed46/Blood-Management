@@ -53,6 +53,7 @@ Route::get('/donarprofile', [LoginController::class, 'view'])->Middleware('auth'
 
 Route::get('/bloodsearch',[BloodSearchController::class,'index']);
 Route::post('/bloodsearch',[BloodSearchController::class,'search']);
+Route::get('/bloodsearchf',[BloodSearchController::class,'bloodsearch']);
 
 
 

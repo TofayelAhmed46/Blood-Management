@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\Donar;
 
 class LoginController extends Controller
 {
@@ -24,7 +26,9 @@ class LoginController extends Controller
     public function donar()
     {
 
-        return view('components.frontend.layouts.donar');
+        $datas = User::with('donar')->get();
+        // dd($datas);
+        return view('components.frontend.layouts.donar',['data'=>$datas]);
     }
     public function view()
     {

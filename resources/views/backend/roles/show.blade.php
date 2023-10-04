@@ -37,14 +37,14 @@
                         <tr>
 
                             <td>Phone: </td>
-                            <td>{{ $datas->donar->phone }} </td>
+                            <td>{{ $datas->donar==null ? '': $datas->donar->phone }} </td>
 
                         </tr>
                         <tr>
 
                             <td>Address:</td>
-                            <td>{{ $datas->donar->thana }},
-                                {{ $datas->donar->district }}
+                            <td>{{ $datas->donar==null ? '': $datas->donar->thana }},
+                                {{ $datas->donar==null ? '': $datas->donar->district }}
                             </td>
                         </tr>
                         <tr>
