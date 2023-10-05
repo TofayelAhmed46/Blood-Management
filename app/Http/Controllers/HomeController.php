@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 
@@ -13,16 +12,18 @@ class HomeController extends Controller
         if (Auth::id()) {
             $isadmin = Auth()->user()->is_admin;
             if ($isadmin == 1) {
-                $user= User::get();
-                $total_donar =count($user);
-                
+                $user = User::get();
+                $total_donar = count($user);
+
                 // dd($total_donar);
 
-                return view('admindashboard',['donar'=> $total_donar]);
+                return view('admindashboard', ['donar' => $total_donar]);
 
 
             } else if ($isadmin == 0) {
-                return view('dashboard');
+
+                $datas = User::where('id', Auth::id())->with('donar')->get();
+                return view('dashboard', ['data' => $datas]);
             } else {
                 return redirect()->back();
             }

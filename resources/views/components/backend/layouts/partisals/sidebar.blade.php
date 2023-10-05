@@ -23,13 +23,13 @@
             <div class="card-body">
                 <div class="media">
                     <div class="mr-3">
-                        <a href="#"><img src="{{asset('ui/frontend/assets/image')}}/{{Auth::user()->donar->image}}" width="38" height="38" class="rounded-circle" alt=""></a>
+                        <a href="#"><img src="{{asset('ui/frontend/assets/image')}}/{{Auth::user()->donar==null ? ' ':Auth::user()->donar->image}}" width="38" height="38" class="rounded-circle" alt=""></a>
                     </div>
                         {{-- {{$product->image}} --}}
                     <div class="media-body">
                         <div class="media-title font-weight-semibold">{{ Auth::user()->name }}</div>
                         <div class="font-size-xs opacity-50">
-                            <i class="icon-pin font-size-sm"></i> &nbsp;{{Auth::user()->donar->profession}}
+                            <i class="icon-pin font-size-sm"></i> &nbsp;{{Auth::user()->donar==null ? ' ':Auth::user()->donar->profession}}
                         </div>
                     </div>
 
@@ -76,16 +76,12 @@
                            Add Donars
                         </span>
                     </a>
-                </li>
+               </li>
                 </li>
                 <li class="nav-item">
                     {{-- <a href="{{route('batches.index')}}" class="nav-link"> --}}
-                    <a href="" class="nav-link">
-                        <i class="icon-home4"></i>
-                        <span>
-                            Update Profile Info
-                        </span>
-                    </a>
+                    <a href="{{route('donar.edit',Auth::User()->id)}}" class="nav-link"><i class="icon-home4"></i>Update profile Info</a>
+
                 </li>
                     <!-- /main -->
 

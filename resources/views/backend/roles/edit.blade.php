@@ -1,16 +1,8 @@
 <x-backend.layouts.master>
-    {{-- <form action="{{ route('roles.update', $role->id)}}" method="POST">
-        @CSRF
-        @method('PATCH')
-        <label class="col-3" for="role_name">Role Name</label>
-        <input type="text" name="role_name" value="{{$role->role_name}}">
-        <button type="submit">Save</button>
-    </form> --}}
-
-    {{-- <form action="{{ route('roles.update', $role->id)}}"></form> --}}
+  {{-- @dd($data) --}}
 
     @foreach ($data as $datas)
-        {{-- @dd($datas->name) --}}
+        
     @endforeach
 
     <h3 class="text-muted ms-auto top-1">Donar Edit #{{ $datas->name }}</h3>

@@ -34,12 +34,14 @@ Route::middleware('auth')->group(function () {
 });
 
 // Data of the donar CRUD Here
-Route::middleware(['auth', 'verified','Admin'])->group(function () {
+// Route::middleware(['auth', 'verified','Admin'])->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::get('/donardata', [DonarController::class, 'index'])->name('donardata');
     Route::get('/donar/profile/{id}', [DonarController::class, 'show'])->name('donar.profile');
     Route::get('/donar/edit/{id}', [DonarController::class, 'edit'])->name('donar.edit');
     Route::patch('donar/update/{id}', [DonarController::class, 'update'])->name('donar.update');
 });
+
 
 
 

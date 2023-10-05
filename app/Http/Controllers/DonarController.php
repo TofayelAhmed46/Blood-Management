@@ -71,11 +71,6 @@ class DonarController extends Controller
         // dd($id);
         $datas = User::where('id',$id)->with('donar')->get();
 
-        // foreach($datas as $data){
-        //  $datas = $datas->donar!=null  ? $datas->donar: '';
-            
-        // }
-        // dd($datas);
         return view('backend.roles.edit',['data'=>$datas]);
     }
 

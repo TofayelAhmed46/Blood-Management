@@ -8,8 +8,8 @@
                     <h3>Latest News</h3>
                     <ul class="fmain">
                         <li><a href="">Lorem ipsum dolor sit amet</a></li>
-                        <li><a href="">An labores explicari qui eu</a></li>
-                        <li><a href="">Nostrum copiosae argumentum has</a></li>
+                        <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                        <li><a href="">Lorem ipsum dolor sit amet</a></li>
                     </ul>
                 </div>
             </div>
@@ -17,9 +17,9 @@
                 <div class="footer-item footer-service">
                     <h3>Popular News</h3>
                     <ul class="fmain">
-                        <li><a href="">Tollit cetero cu usu etiam evertitur</a></li>
                         <li><a href="">Lorem ipsum dolor sit amet</a></li>
-                        <li><a href="">Cu vel choro exerci pri et oratio iisque</a></li>
+                        <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                        <li><a href="">Lorem ipsum dolor sit amet, </a></li>
                     </ul>
                 </div>
             </div>

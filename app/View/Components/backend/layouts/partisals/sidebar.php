@@ -5,6 +5,7 @@ namespace App\View\Components\backend\layouts\partisals;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
+use Illuminate\Support\Facades\Auth;
 
 class sidebar extends Component
 {
