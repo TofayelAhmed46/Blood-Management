@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Donar;
+use App\Models\Blood_group;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
@@ -12,12 +14,14 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\DB;
 
 class RegisteredUserController extends Controller
 {
     /**
      * Display the registration view.
      */
+
     public function create(): View
     {
         return view('auth.register');
@@ -30,21 +34,45 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
+        // $request->validate([
+        //     'name' => ['required', 'string', 'max:255'],
+        //     'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
+        //     'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        // ]);
 
+
+        
+        DB::beginTransaction();
+ 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
 
-        event(new Registered($user));
 
+        $user->save();
+        
+        $donar = Donar::create([
+            'user_id'=>$user->id,
+            'district' => 'Rajshahi'
+        ]);
+
+        $donar->save();
+       
+        $bloodGroup = Blood_group::create([
+            'donar_id' => $donar->id,
+            'blood-group' => 'o+',
+
+        ]);
+
+        $bloodGroup->save();
+        DB::commit();
+
+        event(new Registered($user));
+        
         Auth::login($user);
+        //dd(Auth::id);
 
         return redirect(RouteServiceProvider::HOME);
     }

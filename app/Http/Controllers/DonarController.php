@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Donar;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Blood_group;
 
 class DonarController extends Controller
 {
@@ -15,8 +16,6 @@ class DonarController extends Controller
     {
         $datas = User::with('donar')->get();
         return view('backend.roles.index',['data'=>$datas]);
-
-      
 
     }
 
@@ -30,29 +29,13 @@ class DonarController extends Controller
 
     }
 
-    // use App\Models\Customer;
 
-    // // To retrieve all orders with their corresponding customers
-    // $orders = Order::with('customer')->get();
-
-    // // To retrieve a specific order with its corresponding customer
-    // $order = Order::with('customer')->find($orderId);
-
-    // // To access the customer data of an order
-    // $customerName = $order->customer->name;
-    /**
-     * 
-     * use App\Models\Order;
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     */
+
     public function show($id)
     {
         // User::with('donar')->get();
@@ -79,42 +62,79 @@ class DonarController extends Controller
      */
     public function update(Request $request,$id)
     {
-        $user = User::where('id', $id)->with('donar')->first();
-        // dd($donar->donar->phone);r
+        $user = User::with('donar')->findOrFail($id);
+    
 
-        // dd($request->all());
+                //  dd($donarId);
+        
+       // dd($donar);
+        if($user->donar!=null){
 
-        if (isset($request->image)) {
+            if (isset($request->image)) {
+                $imageName = time() . '.' . $request->image->extension();
+                $request->image->move(public_path('ui/frontend/assets/image'), $imageName);
+                $user->donar->image = $imageName;
+            }
 
-            $imageName = time() . '.' . $request->image->extension();
-            $request->image->move(public_path('ui/frontend/assets/image'), $imageName);
-            $user->donar->image = $imageName;
-        }
+
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->donar->phone = $request->phone;
+            $user->donar->district = $request->district;
+            $user->donar->thana = $request->thana;
+            $user->donar->religion = $request->religion;
+            $user->donar->gender = $request->gender;
+            $user->donar->profession = $request->profession;
+            $user->donar->dob = $request->dob;
+
+            
+            // $user->save();
+            // $user->donar->save();
+            // return redirect()->route('donardata');
+            // $datas = User::with('donar')->get();
+            // return view('backend.roles.index',['data'=>$datas]);
+
+            }
 
 
-       // dd($request->dob);
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->donar->phone = $request->phone;
-        $user->donar->district = $request->district;
-        $user->donar->thana = $request->thana;
-        $user->donar->religion = $request->religion;
-        $user->donar->gender = $request->gender;
-        $user->donar->profession = $request->profession;
-        $user->donar->dob = $request->dob;
-        // $user->donar->image = $request->image;
+            else{  
+                 $user->name = $request->name;
+                    $user->email = $request->email;
+                      $donar= new Donar;
+                      $imageName = "";
+                      if (isset($request->image)) {
 
-        $user->save();
-        $user->donar->save();
-        $datas = User::with('donar')->get();
-        return view('backend.roles.index',['data'=>$datas]);
+                        // $image_name = $request->image;
+                        $imageName = time() . '.' . $request->image->extension();
+                        $request->image->move(public_path('ui/frontend/assets/image'), $imageName);
+                    }
+                    Donar::create([
+                        
+                    'user_id' => $id,
+                    'image' => $imageName,
+                    'phone' => $request->phone,
+                    'district' => $request->district,
+                    'thana' => $request->thana,
+                    'religion' => $request->religion,
+                    'gender' => $request->gender,
+                    'profession' => $request->profession,
+                    'dob' => $request->dob
+                     ]);
+                   
+                    //  $user->save();
+                    // //  $datas = User::with('donar')->get();
+                    // //  return redirect()->route('donardata');
+                    // return redirect()->route('donardata');
+              
+            }
 
-    //    dd($request->all());
+            $user->save();
+            // $user->donar->save();
+            return redirect()->route('donardata');
+            
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+
     public function destroy(Donar $donar)
     {
         //

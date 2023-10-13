@@ -80,7 +80,7 @@
                 </li>
                 <li class="nav-item">
                     {{-- <a href="{{route('batches.index')}}" class="nav-link"> --}}
-                    <a href="{{route('donar.edit',Auth::User()->id)}}" class="nav-link"><i class="icon-home4"></i>Update profile Info</a>
+                    <a href="{{route('user.edit',Auth::User()->id)}}" class="nav-link"><i class="icon-home4"></i>Update profile Info</a>
 
                 </li>
                     <!-- /main -->

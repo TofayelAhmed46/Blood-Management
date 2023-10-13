@@ -19,6 +19,8 @@
             <x-frontend.layouts.partials.footer/>
         </div>
     </div>
+
+    
 </body>
 
 </html>

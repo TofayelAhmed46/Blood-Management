@@ -6,11 +6,27 @@
   height: 300px;
 
 }
+.caroImg img {
+  opacity: .4;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width:50%;
+  transform: translate(-50%, -50%);
+}
+.searchbtn{
+  width: auto;
+  height: 35px;
+  margin-top: 25px;
+}
 
 .carouselImage {  
   width: 100%;
   height: 300px;
-  border: 2px solid red;
+  border: 1px solid red;
   background-attachment: fixed;
 
 }
@@ -21,8 +37,6 @@
 
 .card img {
   height: 150px;
-
-
 }
 
 .cardMargin {
@@ -35,10 +49,18 @@
   margin-right: 20px;
 
 }
+.active {
+  /* Your active link styling here */
+  font-weight: bold;
+  background-color: #DEE1E6;
+  border-radius: 3px;
+  
+}
 
 .nav-link:hover {
   color: white;
-  background-color: red;
+  background-color: #999999;
+  border-radius: 3px;
 
 }
 

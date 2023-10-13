@@ -4,7 +4,7 @@
 @foreach ($data as $datas )
 {{-- @dd($datas) --}}
 {{-- {{$datas->name}} --}}
-@if ($datas->id===null)
+@if ($datas->name==null)
  <h1>   {{'No Data Found'}}</h1>
     
 @else

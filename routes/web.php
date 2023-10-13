@@ -8,6 +8,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BloodSearchController;
 use App\Http\Controllers\DonarController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserProfileUpdate;
 
 
 
@@ -40,8 +41,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/donar/profile/{id}', [DonarController::class, 'show'])->name('donar.profile');
     Route::get('/donar/edit/{id}', [DonarController::class, 'edit'])->name('donar.edit');
     Route::patch('donar/update/{id}', [DonarController::class, 'update'])->name('donar.update');
+     
+    Route::get('/user/edit/{id}', [UserProfileUpdate::class, 'edit'])->name('user.edit');
+    Route::patch('/user/update/{id}', [UserProfileUpdate::class, 'update'])->name('user.update');
 });
-
 
 
 
@@ -52,10 +55,10 @@ Route::get('/donarprofile', [LoginController::class, 'view'])->Middleware('auth'
 
 
 // search for blood here
-
-Route::get('/bloodsearch',[BloodSearchController::class,'index']);
 Route::post('/bloodsearch',[BloodSearchController::class,'search']);
-Route::get('/bloodsearchf',[BloodSearchController::class,'bloodsearch']);
+
+// Route::get('/bloodsearch',[BloodSearchController::class,'index']);
+// Route::get('/bloodsearchf',[BloodSearchController::class,'bloodsearch']);
 
 
 

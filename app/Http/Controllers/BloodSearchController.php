@@ -7,9 +7,9 @@ use Illuminate\Support\Facades\DB;
 
 class BloodSearchController extends Controller
 {
-    public function index(Request $request){
-        return view('components.frontend.layouts.bloodsearch');
-    }
+    // public function index(Request $request){
+    //     return view('components.frontend.layouts.bloodsearch');
+    // }
     public function search(Request $request){
         // dd($request->blood_type);
         $datas = DB::table('users')
@@ -19,7 +19,7 @@ class BloodSearchController extends Controller
         ->where('donars.district',$request->district)       
         ->where('blood_groups.blood-group',$request->blood_type)       
         ->get();
-        // dd($datas);
+        //  dd($datas);
 
         return view('components.frontend.search.searchdata',['data'=>$datas]);
     }

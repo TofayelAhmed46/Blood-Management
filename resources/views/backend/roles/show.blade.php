@@ -5,11 +5,11 @@
         {{-- <button><a href="{{ route('roles.index') }}">Back</a></button> --}}
         <div class="row">
             <div class="col-4">
-
-                <img src="{{ asset('ui/frontend') }}/assets/image/donar/donar1.jpg" alt="" width="200px"
-                    height="200px">
-                <br>
                 @foreach ($data as $datas)
+
+                {{-- <img src="{{ $datas->image==null ? asset('ui/frontend')/assets/image/noimage.jpg : asset('ui/frontend')/assets/image}}/{{$datas->image }}" alt="" width="200px"
+                    height="200px"> --}}
+                <br>
                     {{ $datas->name }} <br>
                     Profession:
                     {{ $datas->donar==null ? '':$datas->donar->profession}}

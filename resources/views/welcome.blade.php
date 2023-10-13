@@ -1,3 +1,5 @@
+
+
 <x-frontend.layouts.partials.main>
 
     <x-frontend.layouts.partials.slider />
